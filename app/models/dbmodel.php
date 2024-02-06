@@ -29,4 +29,8 @@ class DbModel {
             return "Invalid request: " . $e->getMessage();
         }
     }
+    public function __destruct()
+    {
+        $this->pdo = null;
+    }
 }

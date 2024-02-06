@@ -3,7 +3,7 @@ session_start();
 
 define("DS", DIRECTORY_SEPARATOR);
 
-require "app" . DS . "core" . DS . "init.php";
+require_once("app" . DS . "core" . DS . "init.php");
 
 $url = $_GET['url'] ?? 'home';
 $url = explode(DS, strtolower($url));
