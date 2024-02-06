@@ -2,7 +2,9 @@
 
     <main>
         <?php
-
+            if(isset($_GET['page']) and !is_numeric($_GET['page'])) {
+                $_GET['page'] = 0;
+            }
             if(isset($all_messages) and !empty($all_messages)) {
                 $page = $_GET['page'] ?? 0;
                 $count = 5;
@@ -10,9 +12,9 @@
                 for($i = $page * $count; $i < ($page + 1) * $count; $i++) {
                     if(isset($all_messages[$i])) {?>
                     <div class="bg-body-tertiary p-5 rounded mt-3">
-                        <h1><?=$all_messages[$i]['title']?></h1>
-                        <h5>Author: <?=$all_messages[$i]['user_name']?></h5>
-                        <p class="lead"><?=$all_messages[$i]['short_desc']?></p>
+                        <h1><?=htmlspecialchars($all_messages[$i]['title'], ENT_QUOTES, 'UTF-8')?></h1>
+                        <h5>Author: <?=htmlspecialchars($all_messages[$i]['user_name'], ENT_QUOTES, 'UTF-8')?></h5>
+                        <p class="lead"><?=htmlspecialchars($all_messages[$i]['short_desc'], ENT_QUOTES, 'UTF-8')?></p>
                         <a class="btn btn-lg btn-primary" href="message?id=<?=$all_messages[$i]['message_id']?>" role="button">Read more... &raquo;</a>
                     </div>
         <?php        }

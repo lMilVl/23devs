@@ -24,7 +24,7 @@
             <a href="<?=ROOT?>/login"><button type="button" class="btn btn-dark">Sign in</button></a>
             <?php }
             else { ?>
-            <label class="p-2">Hello, <?php echo $_SESSION['user'][0]['user_name']?>!</label>
+            <label class="p-2">Hello, <?php echo htmlspecialchars($_SESSION['user'][0]['user_name'], ENT_QUOTES, 'UTF-8');?>!</label>
             <div class="dropdown text-end">
 
                 <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">

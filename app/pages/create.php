@@ -8,15 +8,15 @@
         <form utocomplete="off" action="/app/core/function.php" method="post">
             <div class="form-group">
                 <label for="exampleFormControlInput1">Title message</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name="msg_title">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title" name="msg_title" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlInput1">Short description</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="msg_short_desc">
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="msg_short_desc" required>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1">Message text</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="msg_full_desc"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="msg_full_desc" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary mb-2" name="create_msg">Confirm</button>
         </form>

@@ -149,9 +149,12 @@ if(isset($_POST['edit_msg']))
     update_message($message);
 }
 
-if(isset($_POST['post_comm']))
+if(isset($_POST['post_comm']) and isset($_SESSION['user']))
 {
     insert_comment($comment);
+}
+else if (isset($_POST['post_comm'])) {
+    header('Location:' . ROOT . '/message?id=' . $_SESSION['msg_id'] );
 }
 
 

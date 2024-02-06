@@ -5,10 +5,10 @@
         if(isset($user_messages) and !empty($user_messages)) {
             for($i = 0; $i < count($user_messages); $i++) { ?>
                 <div class="bg-body-tertiary p-5 rounded mt-3">
-                    <h1><?=$user_messages[$i]['title']?></h1>
-                    <h5>Author: <?=$user_messages[$i]['user_name']?></h5>
-                    <p class="lead"><?=$user_messages[$i]['short_desc']?></p>
-                    <a class="btn btn-lg btn-primary" href="post.php?id=<?=$user_messages[$i]['message_id']?>" role="button">Read more... &raquo;</a>
+                    <h1><?=htmlspecialchars($user_messages[$i]['title'], ENT_QUOTES, 'UTF-8')?></h1>
+                    <h5>Author: <?=htmlspecialchars($user_messages[$i]['user_name'], ENT_QUOTES, 'UTF-8')?></h5>
+                    <p class="lead"><?=htmlspecialchars($user_messages[$i]['short_desc'], ENT_QUOTES, 'UTF-8')?></p>
+                    <a class="btn btn-lg btn-primary" href="message?id=<?=$user_messages[$i]['message_id']?>" role="button">Read more... &raquo;</a>
                     <a class="btn btn-lg btn-danger float-end m-1" href="delete?id=<?=$user_messages[$i]['message_id']?>" role="button">Delete</a>
                     <a class="btn btn-lg btn-warning float-end m-1" href="edit?id=<?=$user_messages[$i]['message_id']?>" role="button">Edit</a>
                 </div>
